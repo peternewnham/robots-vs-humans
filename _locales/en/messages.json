@@ -1,0 +1,106 @@
+{
+
+	"extName": {
+		"message": "Robots vs Humans",
+		"description": "Extension name"
+	},
+	"extDescription": {
+		"message": "Displays the robots.txt and humans.txt for any website. They will also fight each other because that is inevitably what robots and humans always end up doing.",
+		"description": "Extension description"
+	},
+
+	"popupHeader": {
+		"message": "Robots $ROBOT_IMAGE$ vs $HUMAN_IMAGE$ Humans",
+		"description": "The heading text on the popup window, containing the robot and human images",
+		"placeholders": {
+			"robot_image": {
+				"content": "<img src='../images/robot_small.png' />"
+			},
+			"human_image": {
+				"content": "<img src='../images/human_small.png' />"
+			}
+		}
+	},
+
+	"fight": {
+		"message": "Fight!",
+		"description": "Describes the fight"
+	},
+
+	"reload": {
+		"message": "Reload",
+		"description": "Text on the button to reload the robots.txt and humans.txt files"
+	},
+
+	"reloading": {
+		"message": "Reloading...",
+		"description": "Text to show when the files are being reloaded"
+	},
+
+	"reloadTooltip": {
+		"message": "Reload the robots.txt and humans.txt files",
+		"description": "The tooltip to show when hovering over the reload button"
+	},
+
+	"reset": {
+		"message": "Reset",
+		"description": "Text to show on the fight button to reset the fight"
+	},
+
+	"robots": {
+		"message": "Robots",
+		"description": "The name of the robots"
+	},
+
+	"humans": {
+		"message": "Humans",
+		"description": "The name of the humans"
+	},
+
+	"draw": {
+		"message": "It's a draw!",
+		"description": "The message to show when the fight ends in a draw"
+	},
+
+	"robotsWin": {
+		"message": "Robots win!",
+		"description": "The message to show when the robots win the fight"
+	},
+
+	"robotsWinDefault": {
+		"message": "Robots win by default!",
+		"description": "The message to show when the robots win because there is no humans.txt"
+	},
+
+	"humansWin": {
+		"message": "Humans win!",
+		"description": "The message to show when the humans win the fight"
+	},
+
+	"humansWinDefault": {
+		"message": "Humans win by default!",
+		"description": "The message to show when the humans win because there is no robots.txt"
+	},
+
+	"noWinner": {
+		"message": "No one turned up to the fight :(",
+		"description": "The message to show when there is no robots.txt or humans.txt"
+	},
+
+	"fighting": {
+		"message": "Fighting...",
+		"description": "The message shown whilst the fight is in progress"
+	},
+
+	"fileNotFound": {
+		"message": "$FILE$ not found :(",
+		"description": "The message to show when a file is not found",
+		"placeholders": {
+			"file": {
+				"content": "$1",
+				"example": "robots.txt"
+			}
+		}
+	}
+
+}
