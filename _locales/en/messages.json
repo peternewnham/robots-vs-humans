@@ -5,7 +5,7 @@
 		"description": "Extension name"
 	},
 	"extDescription": {
-		"message": "Displays the robots.txt and humans.txt for any website. They will also fight each other because that is inevitably what robots and humans always end up doing.",
+		"message": "Displays the robots.txt and humans.txt for any website.",
 		"description": "Extension description"
 	},
 
