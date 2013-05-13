@@ -11,3 +11,18 @@ Acknowledgements
 * javascript md5 - http://www.myersdaily.org/joseph/javascript/md5-text.html
 * Robot Image - http://iconka.com
 * Human Image - http://www.turbomilk.com
+
+Changelog
+---------
+
+v1.0.2
+------
+* Encode robots.txt and humans.txt files using htmlentites in case they return valid markup
+
+v1.0.1
+------
+* Updated description
+
+v1.0.0
+------
+* Initial release

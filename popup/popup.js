@@ -267,6 +267,20 @@ var fight = {
 $(function() {
 
 	/**
+	 * Convert the characters in some text to the html entity equivalent
+	 */
+	function htmlentities(text) {
+		
+		return String(text)
+				.replace(/&/g, '&amp;')
+				.replace(/</g, '&lt;')
+				.replace(/>/g, '&gt;')
+				.replace(/"/g, '&quot;')
+				.replace(/'/g, '&apos;');
+
+	}
+
+	/**
 	 * Populate the popup
 	 */
 	function populate(data) {
@@ -274,7 +288,7 @@ $(function() {
 		// robots.txt
 		var robots = data.robots;
 		if (robots !== false) {
-			$('#robots').html('<pre>' + robots + '</pre>');
+			$('#robots').html('<pre>' + htmlentities(robots) + '</pre>');
 		}
 		else {
 			$('#robots').html('<p>' + chrome.i18n.getMessage("fileNotFound", ["robots.txt"]) + '</p>');	
@@ -283,7 +297,7 @@ $(function() {
 		// humans.txt
 		var humans = data.humans;
 		if (humans !== false) {
-			$('#humans').html('<pre>' + humans + '</pre>');
+			$('#humans').html('<pre>' + htmlentities(humans) + '</pre>');
 		}
 		else {
 			$('#humans').html('<p>' + chrome.i18n.getMessage("fileNotFound", ["humans.txt"]) + '</p>');	
