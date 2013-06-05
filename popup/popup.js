@@ -212,11 +212,14 @@ var fight = {
 
 			// generate the outcome text
 			var outcome = chrome.i18n.getMessage("draw");
+
+			// robots win
 			if (this.robotCount > this.humanCount) {
 				outcome = chrome.i18n.getMessage("robotsWin");
 			}
+			// humans win
 			else if (this.robotCount < this.humanCount) {
-				outcome = chrome.i18n.getMessage("robotsWin");
+				outcome = chrome.i18n.getMessage("humansWin");
 			}
 
 			// finish the fight

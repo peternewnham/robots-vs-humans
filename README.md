@@ -15,6 +15,10 @@ Acknowledgements
 Changelog
 ---------
 
+v1.0.3
+------
+* Fixed issue where it would always say that robots won the fight even if they didn't (those crafty robots...)
+
 v1.0.2
 ------
 * Encode robots.txt and humans.txt files using htmlentites in case they return valid markup
