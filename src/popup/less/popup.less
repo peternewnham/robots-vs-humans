@@ -1,0 +1,94 @@
+//
+// Bootstrap
+//==============
+
+@import "bootstrap/bootstrap";
+
+//
+// Popup styles
+//==============
+
+body {
+	width: 650px;
+	padding: 10px 20px;
+	margin-right: 1px;
+	min-width: 700px;
+}
+
+header {
+	h2 {
+		img {
+			position: relative;
+			top: -5px;
+		}
+	}
+}
+
+.nav {
+	margin-bottom: 10px;
+}
+
+.progress {
+	margin-bottom: 0px;
+	height: 25px;
+	margin-top: 5px;
+}
+
+.progress-bar {
+	transition: width 0.3s ease;
+}
+
+.char-row {
+	overflow: hidden;
+}
+
+.char {
+	position: relative;
+	z-index: -2;
+	transform: rotate(0deg);
+	&.attacking {
+		z-index: -1;
+	}
+	&.dead {
+		filter: grayscale(100%);
+	}
+}
+
+#robot-char {
+	&.attacking {
+		transform: rotate(15deg);
+	}
+	&.dead {
+		transform: rotate(-90deg) translate(-64px, -64px) !important;
+	}
+}
+
+#human-char {
+	&.attacking {
+		transform: rotate(-15deg);
+	}
+	&.dead {
+		transform: rotate(90deg) translate(64px, -64px) !important;
+	}
+}
+
+#fight-outcome {
+	margin-top: 20px;
+	h2 {
+		margin: 0;
+	}
+}
+
+#about {
+	font-size: 12px;
+
+	.col-xs-7, .col-xs-5 {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+
+}

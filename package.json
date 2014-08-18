@@ -1,0 +1,27 @@
+{
+  "name": "robots-vs-humans",
+  "version": "1.0.0",
+  "homepage": "http://www.blarg.co.uk/tools/robots-vs-humans",
+  "bugs": "https://github.com/wrakky/robots-vs-humans/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Peter Newnham",
+    "email": "pete@blarg.co.uk",
+    "url": "http://www.blarg.co.uk/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wrakky/robots-vs-humans.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-zip": "~0.12.0",
+    "grunt-autoprefixer": "~1.0.0"
+  }
+}

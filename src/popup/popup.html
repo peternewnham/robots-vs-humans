@@ -1,0 +1,129 @@
+<html>
+<head>
+	<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+<header>
+	<h2 data-i18n="popupHeader">Robots <img src="images/robot_small.png" /> vs <img src="images/human_small.png" /> Humans</h2>
+</header>
+
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#robots" data-toggle="tab" data-title="Robots">robots.txt</a></li>
+	<li><a href="#humans" data-toggle="tab" data-title="Humans">humans.txt</a></li>
+	<li><a href="#fight" data-toggle="tab" data-i18n="fight" data-i18n-format="lowercase" data-title="Fight">fight!</a></li>
+	<li><a href="#about" data-toggle="tab" data-i18n="about" data-i18n-format="lowercase" data-title="About">about</a></li>
+	<li class="pull-right">
+		<button id="reload" class="btn" data-toggle="tooltip" data-title="Reload files" data-i18n="reload">Reload</button>
+	</li>
+</ul>
+
+<div class="tab-content">
+	<div class="tab-pane fade active in" id="robots"></div>
+	<div class="tab-pane fade" id="humans"></div>
+	<div class="tab-pane fade" id="fight">
+		<p>FIGHT!</p>
+	</div>
+	<div class="tab-pane fade container" id="about">
+		<div class="row">
+
+			<div class="col-xs-7 left">
+
+				<h3>Release History</h3>
+
+				<!-- v1.0.4 -->
+				<h4>v1.0.4</h4>
+				<ul>
+					<li>Updated interface</li>
+					<li>Brand new animated fight scene!</li>
+				</ul>
+
+				<!-- v1.0.3 -->
+				<h4>v1.0.3</h4>
+				<ul>
+					<li>Fixed issue where it would always say that robots won the fight even if they didn't (those crafty robots...)</li>
+				</ul>
+
+				<!-- v1.0.2 -->
+				<h4>v1.0.2</h4>
+				<ul>
+					<li>Encode robots.txt and humans.txt files using htmlentites in case they return valid markup</li>
+				</ul>
+
+				<!-- v1.0.1 -->
+				<h4>v1.0.1</h4>
+				<ul>
+					<li>Updated description</li>
+				</ul>
+
+				<!-- v1.0.0 -->
+				<h4>v1.0.0</h4>
+				<ul>
+					<li>Initial release</li>
+				</ul>
+
+			</div>
+
+			<div class="col-xs-5 right">
+
+				<div>
+					<h3>Support Robots vs Humans</h3>
+					<p>
+						If you like Robots vs Humans or find it useful please leave a nice review so others can also enjoy it. You can also leave a donation if you are
+						feeling especially awesome and generous!
+					</p>
+					<div>
+						<a href="https://chrome.google.com/webstore/detail/robots-vs-humans/fjnhgpnnokcbcfbopenblmpncpaljfbk/reviews" class="btn btn-warning btn-sm">
+							Leave a Review &nbsp;
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+						</a>
+						<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=S94PUFB2TKBNU&lc=GB&item_name=Robots%20vs%20Humans%20Donation&item_number=robots%2dvs%2dhumans&currency_code=GBP&bn=PP%2dDonationsBF%3afavicon%2epng%3aNonHosted" class="btn btn-success btn-sm">Donate</a>
+					</div>
+				</div>
+
+				<div>
+					<h3>Contribute</h3>
+					<p>
+						Robots vs Humans was created by <a href="http://twitter.com/wrakky">Pete Newnham</a>. If you would like to contribute to the code or submit a translation, instructions and
+						source is freely available on github.
+					</p>
+					<a href="https://github.com/wrakky/robots-vs-humans" class="btn btn-primary btn-xs btn-block">Visit Github Project Page</a>
+				</div>
+
+				<div>
+					<h3>My Other Extensions</h3>
+					<p>Like Robots vs Humans? Why not try my other extensions!</p>
+					<dl>
+						<dt><a href="https://chrome.google.com/webstore/detail/page-ruler/jlpkojjdgbllmedoapgfodplfhcbnbpn">Page Ruler</a> - over 150,000 users!</dt>
+						<dd>Draw a ruler to get pixel dimensions and positioning, and measure elements on any web page.</dd>
+					</dl>
+					<dl>
+						<dt><a href="https://chrome.google.com/webstore/detail/invigilator/gmhgjkobbgamddnpceaieojogffcmckh">Invigilator</a></dt>
+						<dd>Invigilator is an extension management tool with additional security checks to make sure you and your data are as safe as possible.</dd>
+					</dl>
+				</div>
+
+				<div>
+					<h3>Credits</h3>
+					<ul>
+						<li>UI created with <a href="http://getbootstrap.com">Bootstrap</a> and <a href="http://jquery.com">jQuery</a></li>
+						<li>Robot Image by <a href="https://www.iconfinder.com/iconsets/iconka-buddy-set">Iconka</a></li>
+						<li>Human Image by <a href="http://turbomilk.com/downloads/livejournal10/">TurboMilk</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="vendor/jquery.js"></script>
+<script type="text/javascript" src="vendor/bootstrap.js"></script>
+<script type="text/javascript" src="popup.js"></script>
+
+</body>
+</html>

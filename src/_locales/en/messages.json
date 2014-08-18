@@ -14,10 +14,10 @@
 		"description": "The heading text on the popup window, containing the robot and human images",
 		"placeholders": {
 			"robot_image": {
-				"content": "<img src='../images/robot_small.png' />"
+				"content": "<img src='images/robot_small.png' />"
 			},
 			"human_image": {
-				"content": "<img src='../images/human_small.png' />"
+				"content": "<img src='images/human_small.png' />"
 			}
 		}
 	},
@@ -40,6 +40,11 @@
 	"reloadTooltip": {
 		"message": "Reload the robots.txt and humans.txt files",
 		"description": "The tooltip to show when hovering over the reload button"
+	},
+
+	"about": {
+		"message": "About",
+		"description": "The title of the about tab"
 	},
 
 	"reset": {
@@ -101,6 +106,26 @@
 				"example": "robots.txt"
 			}
 		}
+	},
+
+	"optionsPageTitle": {
+		"message": "Robots vs Humans Options",
+		"description": "Title for the options page"
+	},
+
+	"optionsSettings": {
+		"message": "Settings are saved automatically",
+		"description": "Message telling users that settings are saved automatically"
+	},
+
+	"optionsStatisticsLabel": {
+		"message": "Send Anonymous Usage Statistics:",
+		"description": "The label for the send anonymous usage statistics checkbox"
+	},
+
+	"optionsStatisticsHelp": {
+		"message": "Information collected contains no personal information and is used solely for the purpose of improving this extension by seeing which sections and features are used",
+		"description": "Message explaining how the anonymous usage statistics is used"
 	}
 
 }

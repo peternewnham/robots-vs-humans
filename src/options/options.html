@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title data-i18n="optionsPageTitle">Robots vs Humans Options</title>
+	<link rel="stylesheet" type="text/css" href="options.css" />
+	<meta charset="UTF-8">
+</head>
+
+<body>
+
+<h1>
+	<span data-i18n="optionsPageTitle">Robots vs Humans Options</span>
+	<span class="label label-info">
+		<span class="glyphicon glyphicon-info-sign"></span>
+		<span data-i18n="optionsSettings">Settings are saved automatically</span>
+	</span>
+</h1>
+
+<form class="form-horizontal" role="form">
+
+	<!-- Analytics -->
+	<div class="form-group clearfix">
+		<label class="col-sm-3 control-label" for="statistics" data-i18n="optionsStatisticsLabel">Send Anonymous Usage Statistics:</label>
+		<div class="col-sm-9 row">
+			<div class="col-sm-4 checkbox-row">
+				<input type="checkbox" id="statistics">
+			</div>
+			<div class="col-sm-12 help-block" data-i18n="optionsStatisticsHelp">
+				Information collected contains no personal information and is used solely for the purpose of improving this extension by seeing which sections and features are used
+			</div>
+		</div>
+	</div>
+
+</form>
+
+<script type="text/javascript" src="vendor/jquery.js"></script>
+<script type="text/javascript" src="vendor/bootstrap.js"></script>
+<script type="text/javascript" src="options.js"></script>
+
+</body>
+
+</html>

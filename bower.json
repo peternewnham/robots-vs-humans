@@ -1,0 +1,14 @@
+{
+	"name": "robots-vs-humans",
+	"version": "1.0.0",
+	"authors": [
+		"Peter Newnham <pete@blarg.co.uk>"
+	],
+	"description": "Extension management",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"jquery": "~2.1",
+		"bootstrap": "~3.2"
+	}
+}
