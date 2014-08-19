@@ -117,6 +117,9 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
 });
 
+/**
+ * Fetch robots.txt and humans.txt whenever a tab is activated and show the page action button
+ */
 chrome.tabs.onActivated.addListener(function(activeInfo) {
 
 	chrome.tabs.get(activeInfo.tabId, function(tab) {
