@@ -39,7 +39,7 @@ RvH.common.Settings = {
 		 * This will be either be false, for no pending update notification, 'update' if the extension has been updated or 'install'
 		 * if it has been installed
 		 */
-		update: false
+		updateType: false
 
 	},
 

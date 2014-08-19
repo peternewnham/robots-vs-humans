@@ -71,6 +71,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		// set update type
 		RvH.common.Settings.setLocal('updateType', 'update');
 
+		// reset cache so all sites are fetched fresh
+		RvH.common.Cache.reset();
+
 	}
 
 	// track page view
@@ -90,6 +93,9 @@ chrome.runtime.onStartup.addListener(function() {
 
 	// track run event
 	RvH.common.Analytics.event('Run', 'Open');
+
+	// reset cache so all sites are fetched fresh
+	RvH.common.Cache.reset();
 
 });
 

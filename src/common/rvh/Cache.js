@@ -237,6 +237,17 @@ RvH.common.Cache = {
 
 		});
 
+	},
+
+	/**
+	 * Resets the cache
+	 */
+	reset: function() {
+
+		console.log('Resetting cache');
+
+		RvH.common.Settings.setLocal(['hosts', 'hostQueue'], [RvH.common.Settings.defaultLocalSettings.hosts, RvH.common.Settings.defaultLocalSettings.hostQueue]);
+
 	}
 
 };
