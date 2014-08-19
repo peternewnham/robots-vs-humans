@@ -56,17 +56,20 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		// track install event
 		RvH.common.Analytics.event('Run', 'Install');
 
+		// set update type
+		RvH.common.Settings.setLocal('updateType', 'install');
+
 	}
 	/*
 	 * Update
 	 */
 	else if (details.reason === 'update') {
 
-		// load default settings
-		RvH.common.Settings.init();
-
 		// track update event
 		RvH.common.Analytics.event('Run', 'Update');
+
+		// set update type
+		RvH.common.Settings.setLocal('updateType', 'update');
 
 	}
 

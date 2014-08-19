@@ -126,6 +126,22 @@
 	"optionsStatisticsHelp": {
 		"message": "Information collected contains no personal information and is used solely for the purpose of improving this extension by seeing which sections and features are used",
 		"description": "Message explaining how the anonymous usage statistics is used"
+	},
+
+	"updateNotification": {
+		"message": "Robots vs Humans has been updated to version $VERSION$!",
+		"description": "Notification telling the user the extension has been updates",
+		"placeholders": {
+			"version": {
+				"content": "$1",
+				"example": "1.0.4"
+			}
+		}
+	},
+
+	"installNotification": {
+		"message": "Thank you for installing Robots vs Humans!",
+		"description": "Notification telling the user the extension has been installed"
 	}
 
 }

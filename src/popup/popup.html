@@ -5,14 +5,14 @@
 <body>
 
 <header>
-	<h2 data-i18n="popupHeader">Robots <img src="images/robot_small.png" /> vs <img src="images/human_small.png" /> Humans</h2>
+	<h2 data-i18n="popupHeader" data-i18n-method="html">Robots <img src="images/robot_small.png" /> vs <img src="images/human_small.png" /> Humans</h2>
 </header>
 
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#robots" data-toggle="tab" data-title="Robots">robots.txt</a></li>
 	<li><a href="#humans" data-toggle="tab" data-title="Humans">humans.txt</a></li>
 	<li><a href="#fight" data-toggle="tab" data-i18n="fight" data-i18n-format="lowercase" data-title="Fight">fight!</a></li>
-	<li><a href="#about" data-toggle="tab" data-i18n="about" data-i18n-format="lowercase" data-title="About">about</a></li>
+	<li><a href="#about" data-toggle="tab" data-i18n="about" data-i18n-format="lowercase" data-title="About">aboutt</a></li>
 	<li class="pull-right">
 		<button id="reload" class="btn" data-toggle="tooltip" data-title="Reload files" data-i18n="reload">Reload</button>
 	</li>
@@ -28,6 +28,8 @@
 		<div class="row">
 
 			<div class="col-xs-7 left">
+
+				<div id="update-notice" class="alert alert-info hide">Robots vs Humans has been updated to version 1.0.4</div>
 
 				<h3>Release History</h3>
 

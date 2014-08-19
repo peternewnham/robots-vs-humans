@@ -32,7 +32,14 @@ RvH.common.Settings = {
 		/**
 		 * Hosts cache so we don't have to continually lookup
 		 */
-		hosts: {}
+		hosts: {},
+
+		/**
+		 * Whether there is a new update
+		 * This will be either be false, for no pending update notification, 'update' if the extension has been updated or 'install'
+		 * if it has been installed
+		 */
+		update: false
 
 	},
 

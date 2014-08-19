@@ -92,15 +92,55 @@ $(function() {
 	});
 
 	// localization
-	$('#header').html(chrome.i18n.getMessage('popupHeader'));
-	$('a[href=#fight]').text(chrome.i18n.getMessage('fight').toLowerCase());
-	$('#reload').text(chrome.i18n.getMessage('reload'));
+	$('[data-i18n]').each(function() {
+		var text = chrome.i18n.getMessage($(this).data('i18n'));
+		var format = $(this).data('i18n-format');
+		if (format === 'lowercase') {
+			text = text.toLowerCase();
+		}
+		var method = $(this).data('i18n-method');
+		if (method === 'html') {
+			$(this).html(text);
+		}
+		else {
+			$(this).text(text);
+		}
+	});
 
 	// events
 
-	// track page view
-	RvH.common.Analytics.pageview('popup.html#robots', 'Popup Robots');
+	RvH.common.Settings.getLocal('updateType', function(updateType) {
 
+		// no pending update type
+		if (updateType === false) {
+
+			// track page view
+			RvH.common.Analytics.pageview('popup.html#robots', 'Popup Robots');
+
+		}
+		else {
+
+			if (updateType === 'update') {
+				$('#update-notice').text(chrome.i18n.getMessage('updateNotification', chrome.runtime.getManifest().version));
+			}
+			else {
+				$('#update-notice').text(chrome.i18n.getMessage('installNotification'));
+			}
+
+			// show update notice
+			$('#update-notice').removeClass('hide');
+
+			// show about tab
+			$('a[href="#about"]').tab('show');
+
+			// reset update type
+			RvH.common.Settings.setLocal('updateType', false);
+
+		}
+
+	});
+
+	// initialise events
 	RvH.initEvents();
 
 });

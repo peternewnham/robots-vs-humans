@@ -235,7 +235,7 @@ module.exports = function (grunt) {
 			test: {
 				cwd: 'build/',
 				src: 'build/**/*',
-				dest: 'invigilator.zip'
+				dest: 'robots-vs-humans.zip'
 			}
 		}
 
