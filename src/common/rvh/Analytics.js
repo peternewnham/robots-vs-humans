@@ -11,10 +11,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-44581945-6', 'auto');
 
 // override function that checks for valid protocol - https://code.google.com/p/analytics-issues/issues/detail?id=312
-//ga('set', 'checkProtocolTask', function(){});
-
-// send pageview
-ga('send', 'pageview');
+ga('set', 'checkProtocolTask', function(){});
 
 RvH.common.Analytics = {
 
