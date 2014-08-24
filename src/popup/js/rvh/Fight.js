@@ -306,6 +306,13 @@ RvH.Fight = {
 		details.robotPunches = robotPunches;
 		details.humanPunches = humanPunches;
 
+		if (robotPunches > humanPunches) {
+			details.winner = 'robots';
+		}
+		else if (humanPunches > robotPunches) {
+			details.winner = 'humans';
+		}
+
 		console.log('punchOrder', punchOrder);
 		console.log('robotPunches', robotPunches);
 		console.log('humanPunches', humanPunches);
@@ -414,7 +421,11 @@ RvH.Fight = {
 				details.index++;
 
 				// fight is over
-				if (details.robotPunches === 0 || details.humanPunches === 0) {
+				if (
+					(details.winner === 'robots' && details.robotPunches === 0) ||
+					(details.winner === 'humans' && details.humanPunches === 0) ||
+					(details.winner === null && (details.robotPunches === 0 || details.humanPunches === 0))
+				) {
 
 					// robot wins
 					if (details.robotPunches === 0) {

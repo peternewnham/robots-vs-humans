@@ -5,7 +5,7 @@
 	"name":			"__MSG_extName__",
 	"short_name":	"__MSG_extName__",
 	"description":	"__MSG_extDescription__",
-	"version":		"1.0.5",
+	"version":		"1.0.6",
 
 	"background":	{
 		"scripts":	[
