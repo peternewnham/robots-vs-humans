@@ -45,13 +45,13 @@ $(function() {
 	 */
 	 function populate(data) {
  		// robots.txt
- 		parseText(data.robots, 'robots.txt', function(data) {
+ 		RvH.common.Util.parseText(data.robots, 'robots.txt', function(data) {
 			$('#robots').html(data);
 		})
 
 		// humans.txt
-		parseText(data.humans, 'humans.txt', function(data) {
-			$('#robots').html(data);
+		RvH.common.Util.parseText(data.humans, 'humans.txt', function(data) {
+			$('#humans').html(data);
 		})
 
 		// fight!
