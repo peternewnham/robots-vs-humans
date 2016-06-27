@@ -113,11 +113,38 @@ RvH.common.Util = {
 
 	/**
 	 * If there is no regex in the link, make it clickable
+	 * @param {String} text  The input file (html encoded)
+	 * @param {String} host  The host of the current tab
+	 * @returns {String}
 	 */
-	 parseAsLink: function(text, host) {
+	 addLinks: function(text, host) {
 	     return text
 	         .replace(/((Disallow|Allow|Sitemap):\s+)(\/[^\s\*]+)(\n|$)/ig, '$1<a href="' + host + '$3">$3</a>$4')
 	         .replace(/(\s|^)(((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?))/gi, '$1<a href="$2">$2</a>');
+	 },
+	/**
+	* Makes any links in a textbody clickable
+	* @param {String} text  The input file (non-html encoded)
+	* @param {String} text  File name for error handling (ex: humans.txt)
+	* @param {Function} function  Callback function which takes in the parsed text
+	* @returns {null}  Callback takes care of return values
+	*/
+	 parseText: function(data, file, callback) {
+	     if (data === false) {
+	         callback('<div class="alert alert-danger">' + chrome.i18n.getMessage("fileNotFound", [file]) + '</div>');
+	     } else {
+			 var that = this;
+	         chrome.tabs.query({
+	             'active': true,
+	             'windowId': chrome.windows.WINDOW_ID_CURRENT
+	         }, function(tabs) {
+	             var host = tabs[0].url.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[0];
+	             var parsedData = that.addLinks(
+	                 that.htmlEntities(data), host
+	             );
+	             callback('<pre>' + parsedData + '</pre>');
+	         });
+	     }
 	 },
 	
 	/**

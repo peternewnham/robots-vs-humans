@@ -44,33 +44,15 @@ $(function() {
 	 * Populate the popup
 	 */
 	 function populate(data) {
-
  		// robots.txt
- 		var robots = data.robots;
- 		chrome.tabs.query({
- 				'active': true,
- 				'windowId': chrome.windows.WINDOW_ID_CURRENT
- 		}, function(tabs) {
- 				var tablink = tabs[0].url;
- 				//Regex to match only the protocol and host of a url
- 				tablink = tablink.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[0];
- 				if (robots !== false) {
- 						var htmlEntities = RvH.common.Util.htmlEntities(robots);
- 						var robot = RvH.common.Util.parseAsLink(htmlEntities, tablink);
- 						$('#robots').html('<pre>' + robot + '</pre>');
- 				} else {
- 						$('#robots').html('<div class="alert alert-danger">' + chrome.i18n.getMessage("fileNotFound", ["robots.txt"]) + '</div>');
- 				}
- 		});
+ 		parseText(data.robots, 'robots.txt', function(data) {
+			$('#robots').html(data);
+		})
 
 		// humans.txt
-		var humans = data.humans;
-		if (humans !== false) {
-			$('#humans').html('<pre>' + RvH.common.Util.htmlEntities(humans) + '</pre>');
-		}
-		else {
-			$('#humans').html('<p>' + chrome.i18n.getMessage("fileNotFound", ["humans.txt"]) + '</p>');
-		}
+		parseText(data.humans, 'humans.txt', function(data) {
+			$('#robots').html(data);
+		})
 
 		// fight!
 		RvH.Fight.init(data);
