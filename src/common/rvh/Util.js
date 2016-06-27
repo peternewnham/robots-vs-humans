@@ -115,22 +115,10 @@ RvH.common.Util = {
 	 * If there is no regex in the link, make it clickable
 	 */
 	 parseAsLink: function(text, host) {
-	    text = text.split(/\n/);
-	    for (var i = 0; i < text.length; i++) {
-	        var current = text[i];
-	        var allow = current.match(/((d|D)is)?(a|A)llow: /);
-	        allow = allow && allow.length ? allow[0] : false;
-	        if (allow && current.indexOf('*') === -1) {
-	            var temp = current.replace(allow, '');
-	            temp = '<a href="' + host + temp + '" target="_blank">' + temp + '</a>';
-	            text[i] = allow + temp;
-	        }
-	        if (text[i].length) {
-	            text[i] += '\n';
-	        }
-	    }
-	    return text.join('');
-	},
+	     return text
+	         .replace(/((Disallow|Allow|Sitemap):\s+)(\/[^\s\*]+)(\n|$)/ig, '$1<a href="' + host + '$3">$3</a>$4')
+	         .replace(/(\s|^)(((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?))/gi, '$1<a href="$2">$2</a>');
+	 },
 	
 	/**
 	 * Create a md5 hash from a string
