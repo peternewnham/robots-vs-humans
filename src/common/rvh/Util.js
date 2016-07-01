@@ -9,7 +9,7 @@ RvH.common.Util = {
 	 * @param {String} url		The url to open
 	 * @param {Boolean} noTrack	Whether not to track the link event
 	 */
-	openLink: function(url, noTrack) {
+	openLink: function (url, noTrack) {
 
 		console.info('Opening link: ', url);
 
@@ -30,7 +30,7 @@ RvH.common.Util = {
 	 * @param {Object} obj	The object to check
 	 * @returns {Boolean}
 	 */
-	isEmptyObject: function(obj) {
+	isEmptyObject: function (obj) {
 
 		return Object.getOwnPropertyNames(obj).length === 0;
 
@@ -42,7 +42,7 @@ RvH.common.Util = {
 	 * @param {Object} from	The object to copy properties from
 	 * @returns {Object}
 	 */
-	extendObject: function(to, from) {
+	extendObject: function (to, from) {
 
 		for (var field in from) {
 
@@ -62,7 +62,7 @@ RvH.common.Util = {
 	 * Returns whether the extension is in dev mode or not
 	 * @returns {boolean}
 	 */
-	isDevMode: function() {
+	isDevMode: function () {
 
 		// get manifest details
 		var manifest = chrome.runtime.getManifest();
@@ -79,7 +79,7 @@ RvH.common.Util = {
 	 * @param {Number} linenumber	The line number the error was on
 	 * @returns {Boolean}
 	 */
-	logError: function(message, url, linenumber) {
+	logError: function (message, url, linenumber) {
 
 		RvH.common.Analytics.event('Error', message, url + ':' + linenumber);
 
@@ -91,7 +91,7 @@ RvH.common.Util = {
 	 * Logs an exception
 	 * @param {Execption} e	The exception object
 	 */
-	logException: function(e) {
+	logException: function (e) {
 
 		RvH.common.Analytics.event('Exception', e.message, e.stack);
 
@@ -100,7 +100,7 @@ RvH.common.Util = {
 	/**
 	 * Convert the characters in some text to the html entity equivalent
 	 */
-	htmlEntities: function(text) {
+	htmlEntities: function (text) {
 
 		return String(text)
 			.replace(/&/g, '&amp;')
@@ -117,43 +117,45 @@ RvH.common.Util = {
 	 * @param {String} host  The host of the current tab
 	 * @returns {String}
 	 */
-	 addLinks: function(text, host) {
-	     return text
-	         .replace(/((Disallow|Allow|Sitemap):\s+)(\/[^\s\*]+)(\n|$)/ig, '$1<a href="' + host + '$3">$3</a>$4')
-	         .replace(/(\s|^)(((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?))/gi, '$1<a href="$2">$2</a>');
-	 },
+	addLinks: function (text, host) {
+		var protocol = host.match(/(https?:\/\/)/)[0];
+		return text
+			.replace(/((Disallow|Allow|Sitemap):\s+)(\/[^\s\*]+)(\n|$)/ig, '$1<a href="' + host + '$3">$3</a>$4')
+			.replace(/(\s|^)(((https?:\/\/)[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?))/gi, '$1<a href="$2">$2</a>')
+			.replace(/(\s|^)(([\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?))/gi, '$1<a href="' + protocol + '$2">$2</a>');
+	},
 	/**
-	* Makes any links in a textbody clickable
-	* @param {String} text  The input file (non-html encoded)
-	* @param {String} text  File name for error handling (ex: humans.txt)
-	* @param {Function} function  Callback function which takes in the parsed text
-	* @returns {null}  Callback takes care of return values
-	*/
-	 parseText: function(data, file, callback) {
-	     if (data === false) {
-	         callback('<div class="alert alert-danger">' + chrome.i18n.getMessage("fileNotFound", [file]) + '</div>');
-	     } else {
-			 var that = this;
-	         chrome.tabs.query({
-	             'active': true,
-	             'windowId': chrome.windows.WINDOW_ID_CURRENT
-	         }, function(tabs) {
-	             var host = tabs[0].url.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[0];
-	             var parsedData = that.addLinks(
-	                 that.htmlEntities(data), host
-	             );
-	             callback('<pre>' + parsedData + '</pre>');
-	         });
-	     }
-	 },
-	
+	 * Makes any links in a textbody clickable
+	 * @param {String} text  The input file (non-html encoded)
+	 * @param {String} text  File name for error handling (ex: humans.txt)
+	 * @param {Function} function  Callback function which takes in the parsed text
+	 * @returns {null}  Callback takes care of return values
+	 */
+	parseText: function (data, file, callback) {
+		if (data === false) {
+			callback('<div class="alert alert-danger">' + chrome.i18n.getMessage("fileNotFound", [file]) + '</div>');
+		} else {
+			var that = this;
+			chrome.tabs.query({
+				'active': true,
+				'windowId': chrome.windows.WINDOW_ID_CURRENT
+			}, function (tabs) {
+				var host = tabs[0].url.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[0];
+				var parsedData = that.addLinks(
+					that.htmlEntities(data), host
+				);
+				callback('<pre>' + parsedData + '</pre>');
+			});
+		}
+	},
+
 	/**
 	 * Create a md5 hash from a string
 	 * Taken from phpjs project - http://phpjs.org/functions/md5/
 	 * @param {String} str	The string to hash
 	 * @returns {string}
 	 */
-	md5: function(str) {
+	md5: function (str) {
 
 		//  discuss at: http://phpjs.org/functions/md5/
 		// original by: Webtoolkit.info (http://www.webtoolkit.info/)
